@@ -1,0 +1,99 @@
+intents:
+- greet
+- accept
+- reject
+- begin_lead
+- goodbye
+
+slots:
+  name:
+    type: unfeaturized
+    auto_fill: false
+  email:
+    type: unfeaturized
+    auto_fill: false
+  phone:
+    type: unfeaturized
+    auto_fill: false
+  hr_answer:
+    type: unfeaturized
+    auto_fill: false
+  resume_link:
+    type: unfeaturized
+    auto_fill: false
+  educational_qualification:
+    type: unfeaturized
+    auto_fill: false
+  why_us:
+    type: unfeaturized
+    auto_fill: false
+
+actions:
+- utter_greet
+- utter_menu
+- utter_lead_q1
+- utter_lead_q2
+- utter_lead_q3
+- utter_lead_q4
+- utter_lead_q5
+
+forms:
+- lead_form_p1
+- lead_form_p21
+- lead_form_p2
+- lead_form_p3
+
+responses:
+  utter_greet:
+  - text: "Hello! I am Aayushi's chatbot!"
+  - text: Hey! I am Alexei from Techknocks. I am a helpful assistant. I can help you apply to jobs, track applications and be a great conversationalist at the same time."
+  
+  utter_menu:
+  - text: "So how can I help you?"
+    buttons:
+    - title: "Looking to apply"
+      payload: "/begin_lead"
+    - title: "Not Interested"
+      payload: "/reject"
+
+  utter_lead_q1:
+  - text: "Great. Now, please help me with some of your details.."
+
+  utter_ask_name:
+  - text: "May I know your name please?"
+
+  utter_ask_email:
+  - text: "Enter your Email: (This will be used as the primary mode of communication)"
+
+  utter_ask_phone:
+  - text: "Enter your phone number:"
+
+  utter_resume_link:
+  - text: "Please enter the Google Drive link of your Resume or CV"
+
+  utter_hr_q:
+  - text: "Thanks for that. Now tell me something about yourself (atleast 200 words)"
+
+  utter_ask_education:
+  - text: "Enter the last education degree that you have recieved:"
+
+  utter_lead_q2:
+  - text: "Thanks for answering all our questions and being this patient. We appreciate it!"
+
+  utter_lead_q3:
+  - text: "Here is your data: \n
+             - Name: {name}\n
+             - Email Id: {email}\n
+             - Phone No: {phone}\n
+             - Education: {educational_qualification}\n
+             - Resume Link: {resume_link}\n
+             - HR Answer: {hr_answer}\n"
+
+  utter_lead_q4:
+  - text: "I will have our recruiters get in touch with you soon!"
+
+  utter_lead_q5:
+  - text: "In the meanwhile for anything, you can contact us at https://techknocks.in/ or +91 999 999 9999"
+
+  utter_goodbye:
+  - text: "Goodbye. See you soon!"
