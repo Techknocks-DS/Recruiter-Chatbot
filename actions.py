@@ -133,9 +133,6 @@ def save_candidate_data(tracker: Tracker):
 
     candidate_data = [applicant_name, phone_number, email_id, education, resume_link,
               hr_answer]
-    client = pymongo.MongoClient("mongodb+srv://Aayus:HP234567890@cluster0.gvafl.mongodb.net/Candidate_Data?retryWrites=true&w=majority", ssl_cert_reqs=ssl.CERT_NONE)
-    db = client["Candidate_Data"]
-    col = db["data"]
     myclient = pymongo.MongoClient("mongodb://localhost:27017/")
     mydb = myclient["Rasa_Chatbot"]
     mycol = mydb["data"]
